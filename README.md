@@ -20,6 +20,7 @@ Installation
 ------------
 
 Connect to one of the Coreteaching servers and paste the following command:
+
     curl -s https://raw.githubusercontent.com/adrianmace/rmit-coreteaching-dotfiles/master/install.sh | bash
 
 
