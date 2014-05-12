@@ -6,12 +6,14 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 export PROMPT_DIRTRIM=2
 
 # Generate a cleaner shell prompt
-if [ $HOSTNAME -eq 'csitprdap01.int.its.rmit.edu.au' ]; then
+if [ $HOSTNAME = "csitprdap01.int.its.rmit.edu.au" ]; then
     export PS1='\[\e[1;33m\]\u@titan\[\e[1;37m\]:\[\e[0;31m\]\w \[\e[0;37m\]\$ '
-elif [ $HOSTNAME -eq 'csitprdap02.int.its.rmit.edu.au' ]; then
+elif [ $HOSTNAME = "csitprdap02.int.its.rmit.edu.au" ]; then
     export PS1='\[\e[1;33m\]\u@saturn\[\e[1;37m\]:\[\e[0;31m\]\w \[\e[0;37m\]\$ '
-elif [ $HOSTNAME -eq 'csitprdap03.int.its.rmit.edu.au' ]; then
+elif [ $HOSTNAME = "csitprdap03.int.its.rmit.edu.au" ]; then
     export PS1='\[\e[1;33m\]\u@jupiter\[\e[1;37m\]:\[\e[0;31m\]\w \[\e[0;37m\]\$ '
+else
+    export PS1='\[\e[1;33m\]\u@\h\[\e[1;37m\]:\[\e[0;31m\]\w \[\e[0;37m\]\$ '
 fi
 
 
