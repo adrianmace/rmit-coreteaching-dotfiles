@@ -18,8 +18,7 @@ cd ~
 
 echo "Replacing .vimrc"
 
-if [ -e '.vimrc' ];
-then
+if [ -e '.vimrc' ]; then
     echo "NOTICE: .vimrc found! Backing up current version to .vimrc.bak"
     mv ~/.vimrc ~/.vimrc.bak
 fi
@@ -33,8 +32,7 @@ https://raw.githubusercontent.com/adrianmace/rmit-coreteaching-dotfiles/master/.
 
 echo "Replacing .bash_profile"
 
-if [ -e '.bash_profile' ];
-then
+if [ -e '.bash_profile' ]; then
     echo "NOTICE: .bash_profile found! Backing up current version to .bash_profile.bak"
     mv ~/.bash_profile ~/.bash_profile.bak
 fi
@@ -49,8 +47,7 @@ https://raw.githubusercontent.com/adrianmace/rmit-coreteaching-dotfiles/master/.
 echo "Reloading bash with configuration"
 echo 
 
-if [ $SHELL == '/bin/bash' ];
-then
+if [ $SHELL == '/bin/bash' ]; then
     source ~/.bash_profile
 else
     bash
