@@ -16,7 +16,6 @@ else
     export PS1='\[\e[1;33m\]\u@\h\[\e[1;37m\]:\[\e[0;31m\]\w \[\e[0;37m\]\$ '
 fi
 
-
 # Various colored alternatives
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
@@ -29,11 +28,42 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-# Useful general unix aliases
-# Source Dushan Karovich-Wynne
+# Useful general unix stuff
+# All belowed sourced by Dushan Karovich-Wynne
+# https://github.com/dushankw
 
 alias mkdir='mkdir -pv'
 alias wget='wget -c'
 alias ports='netstat -tulanp'
 alias pscpu='ps aux | sort -nr -k 3 | head -10'
 alias meminfo='free -m -l -t'
+
+# History settings
+shopt -s histappend
+HISTSIZE=10000
+HISTFILESIZE=1000000
+HISTTIMEFORMAT='%b %d %I:%M %p '
+HISTCONTROL=ignoreboth
+HISTIGNORE="history:h:pwd:exit:x:df:du:ls:ls -la:ll:l:clear:c"
+
+# Original from http://pigfly.io but modified to remove/add formats
+extract() {
+    if [ -f $1 ] ; then
+        case $1 in
+            *.tar.bz2)  tar xjf $1  ;;
+            *.tar.gz) tar xzf $1  ;;
+            *.tar.xz) tar -xvJf $1 ;;
+            *.rar)  unrar x $1  ;;
+            *.gz) gzip $1 ;;
+            *.tar)  tar xf $1 ;;
+            *.tbz2) tar xjf $1  ;;
+            *.tgz)  tar xzf $1  ;;
+            *.zip)  unzip $1  ;;
+            *.Z)  uncompress $1 ;;
+            *.7z) 7za e $1 ;;
+            *)  echo "'$1' cannot be extracted via extract()" ;;
+        esac
+    else
+        echo "'$1' is not a valid file"
+    fi
+}
