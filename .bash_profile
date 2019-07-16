@@ -29,8 +29,6 @@ alias la='ls -A'
 alias l='ls -CF'
 
 # Useful general unix stuff
-# All belowed sourced by Dushan Karovich-Wynne
-# https://github.com/dushankw
 
 alias mkdir='mkdir -pv'
 alias wget='wget -c'
